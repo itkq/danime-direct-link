@@ -6,11 +6,6 @@ A chrome extension to show the direct link to the video on d-anime store. Just w
 
 ## Install
 
-```shell
-git clone https://github.com/itkq/danime-direct-link
-cd danime-direct-link
-npm i
-npm run build
-```
-
-Then go chrome://extensions/ and load ./dist directory.
+1. Go https://github.com/itkq/danime-direct-link/releases and download the latest extension.zip
+1. Extract extension.zip
+1. Open chrome://extensions/ and load ./dist directory.
