@@ -13,12 +13,16 @@ jobs:
         node-version-file: 'package.json'
     - run: npm ci
     - run: npm run build
+    - name: zip dist
+      uses: montudor/action-zip@v1
+      with:
+        args: zip -qq -r extension.zip dist
     - name: upload
       uses: softprops/action-gh-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        files: dist/*
+        files: extension.zip
     - uses: haya14busa/action-update-semver@v1
       with:
         major_version_tag_only: true
