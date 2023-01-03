@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import { crx, defineManifest } from '@crxjs/vite-plugin'
 
-// matches: ,
 const manifest = defineManifest({
   manifest_version: 3,
   name: 'danime direct link',
