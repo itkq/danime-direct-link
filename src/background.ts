@@ -30,7 +30,13 @@ const main = async (): Promise<void> => {
     }
   }
 
+  const DirectLinkId = 'danime-direct-link';
+
   const addLink = (targetElement: Element, currentUrl: string) => {
+    if (targetElement.parentNode && Array.from(targetElement.parentNode.children).some(c => c.id === DirectLinkId)) {
+      return;
+    }
+
     // e.g. https://animestore.docomo.ne.jp/animestore/ci_pc?workId=25806&partId=25806012 to https://animestore.docomo.ne.jp/animestore/sc_d_pc?partId=25806012
     const m = currentUrl.match(/^https:\/\/animestore.docomo.ne.jp\/animestore\/ci_pc\?workId=\d+&partId=(\d+)$/);
 
@@ -40,6 +46,7 @@ const main = async (): Promise<void> => {
     const href = `https://animestore.docomo.ne.jp/animestore/sc_d_pc?partId=${m[1]}`;
 
     const directLink = document.createElement('a');
+    directLink.id = DirectLinkId;
     const linkText = document.createTextNode('Direct link');
     directLink.appendChild(linkText);
     directLink.title = 'Direct link';
