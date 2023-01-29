@@ -3,7 +3,7 @@ import { crx, defineManifest } from '@crxjs/vite-plugin'
 
 const manifest = defineManifest({
   manifest_version: 3,
-  name: 'danime direct link',
+  name: 'danime open new tab',
   version: '0.0.8',
   permissions: ["tabs", "scripting"],
   host_permissions: [
