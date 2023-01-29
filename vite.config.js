@@ -4,7 +4,7 @@ import { crx, defineManifest } from '@crxjs/vite-plugin'
 const manifest = defineManifest({
   manifest_version: 3,
   name: 'danime direct link',
-  version: '0.0.7',
+  version: '0.0.8',
   permissions: ["tabs", "scripting"],
   host_permissions: [
     "https://animestore.docomo.ne.jp/animestore/ci_pc?workId=*&partId=*"
