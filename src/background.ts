@@ -47,9 +47,9 @@ const main = async (): Promise<void> => {
 
     const openNewTabLink = document.createElement('a');
     openNewTabLink.id = DanimeOpenNewTabId;
-    const linkText = document.createTextNode('Direct link');
+    const linkText = document.createTextNode('Open in new tab');
     openNewTabLink.appendChild(linkText);
-    openNewTabLink.title = 'Direct link';
+    openNewTabLink.title = 'Open in new tab';
     openNewTabLink.href = href;
     openNewTabLink.target = '_blank';
     targetElement.insertAdjacentElement('afterend', openNewTabLink);
