@@ -30,10 +30,10 @@ const main = async (): Promise<void> => {
     }
   }
 
-  const DirectLinkId = 'danime-direct-link';
+  const DanimeOpenNewTabId = 'danime-open-new-tab';
 
   const addLink = (targetElement: Element, currentUrl: string) => {
-    if (targetElement.parentNode && Array.from(targetElement.parentNode.children).some(c => c.id === DirectLinkId)) {
+    if (targetElement.parentNode && Array.from(targetElement.parentNode.children).some(c => c.id === DanimeOpenNewTabId)) {
       return;
     }
 
@@ -45,14 +45,14 @@ const main = async (): Promise<void> => {
     }
     const href = `https://animestore.docomo.ne.jp/animestore/sc_d_pc?partId=${m[1]}`;
 
-    const directLink = document.createElement('a');
-    directLink.id = DirectLinkId;
+    const openNewTabLink = document.createElement('a');
+    openNewTabLink.id = DanimeOpenNewTabId;
     const linkText = document.createTextNode('Direct link');
-    directLink.appendChild(linkText);
-    directLink.title = 'Direct link';
-    directLink.href = href;
-    directLink.target = '_blank';
-    targetElement.insertAdjacentElement('afterend', directLink);
+    openNewTabLink.appendChild(linkText);
+    openNewTabLink.title = 'Direct link';
+    openNewTabLink.href = href;
+    openNewTabLink.target = '_blank';
+    targetElement.insertAdjacentElement('afterend', openNewTabLink);
   }
 
   try {
